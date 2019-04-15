@@ -1,6 +1,7 @@
 package com.example.alarmclock2;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,15 +21,18 @@ public class ReminderCustomAdapter extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         AlarmModel _alarm = (AlarmModel) getItem(position);
-        if(convertView ==null)
+        Log.d("pos", String.valueOf(position));
+        if(convertView == null)
         {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.reminder_sample_layout, parent, false);
+
         }
         TextView alarmTitle = (TextView) convertView.findViewById(R.id.alarm_sample_layout_titleText_id);
         TextView alarmTime = (TextView) convertView.findViewById(R.id.alarm_sample_layout_timeText_id);
         TextView alarmDate = (TextView) convertView.findViewById(R.id.alarm_sample_layout_dateText_id);
         TextView alarmTState = (TextView) convertView.findViewById(R.id.alarm_sample_layout_alarmStateText_id);
         LinearLayout lnLayout = (LinearLayout) convertView.findViewById(R.id.alarm_sample_layout_linear_layout_id);
+        //LinearLayout lnLayout = convertView.findViewById(R.id.alarm_sample_layout_linear_layout_id2);
 
         lnLayout.setSelected(_alarm.isItem_selected());
         alarmTitle.setText(_alarm.getAlarm_title());

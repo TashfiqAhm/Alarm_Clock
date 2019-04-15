@@ -179,7 +179,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        notification_id = alarm_list.get(alarm_list.size()-1).getAlarm_id();
+        if(alarm_list.size() >0)
+            notification_id = alarm_list.get(alarm_list.size()-1).getAlarm_id();
+        else notification_id =1;
 
     }
 

@@ -109,6 +109,7 @@ public class AlarmSet extends AppCompatActivity implements View.OnClickListener,
 
 
                         //set alarm with the time
+                        Log.d("idman", String.valueOf(_alarm.getAlarm_id()));
 
                         Calendar cal = Calendar.getInstance();
                         cal.set(_alarm.getYear(),_alarm.getMonth(),_alarm.getDay(),_alarm.getHour(),_alarm.getMinute(),0);
